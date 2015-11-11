@@ -34,4 +34,3 @@ var App = React.createClass({
 });
 
 module.exports = App;
-React.render(<Parent />, document.getElementById('app'));
