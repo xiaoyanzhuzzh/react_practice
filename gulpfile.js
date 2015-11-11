@@ -11,8 +11,8 @@ var reload = browserSync.reload;
 var paths = {
     less: ['./src/style/**/*.less'],
     jade: ['./src/index.jade'],
-    mainJs: ['./src/js/main.js'],
-    js: ['./src/js/*.js']
+    mainJs: ['./src/js/client.js'],
+    js: ['./src/js/*/**.js']
 };
 
 gulp.task('clean', function(done) {
@@ -50,6 +50,7 @@ gulp.task('serve', ['bundleJs', 'lessCompiler', 'jadeCompiler'], function () {
 
     gulp.watch(paths.less, ['lessCompiler', reload]);
     gulp.watch(paths.js, ['bundleJs', reload]);
+    gulp.watch(paths.mainJs, ['bundleJs', reload]);
     gulp.watch(paths.jade, ['jadeCompiler', reload]);
 });
 
