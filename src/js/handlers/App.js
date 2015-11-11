@@ -1,7 +1,6 @@
 var React = require('react');
 var Router = require('react-router');
-var RouteHandler = Router.RouteHandler;
-var { fetchingData } = require('../util/appEvents');
+var Link = Router.Link;
 
 module.exports = React.createClass({
     displayName: "App",
@@ -14,11 +13,12 @@ module.exports = React.createClass({
             };
         }
     },
-    render: function() {
+    render() {
         return (
             <div>
-                <RouteHandler {...this.props} />
+                <Link to="/home">Home</Link>
+                <Link to="/itemDetails">ItemDetails</Link>
             </div>
-        );
+        )
     }
 });
