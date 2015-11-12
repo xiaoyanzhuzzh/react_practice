@@ -16,9 +16,11 @@ module.exports = React.createClass({
     },
     render() {
         return (
-            <div>
-                <Link to="/home">Home</Link>
-                <Link to="/item">Item</Link>
+            <div id="nav">
+              <ul>
+                <li><Link className="link" to="/home">Home</Link></li>
+                <li><Link className="link" to="/item">Item</Link></li>
+              </ul>
                 <RouteHandler />
             </div>
         )
