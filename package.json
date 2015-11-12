@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "0.14.2",
-    "react-router": "0.12.4"
+    "react": "0.12.2",
+    "react-router": "^0.12.4"
   },
   "devDependencies": {
     "gulp": "^3.6.0",
