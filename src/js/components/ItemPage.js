@@ -7,7 +7,7 @@ var itemList = [
   {id: 3, name: '橘子', price: 12.0, unit: '个', category: '水果', number: 4}
 ];
 
-var App = React.createClass({
+var ItemPage = React.createClass({
   getInitialState(){
     return {
       itemList: itemList
@@ -25,7 +25,7 @@ var App = React.createClass({
   render(){
     return (
       <div>
-        <h1>CartItems of your cart</h1>
+        <h1>ItemList</h1>
         <Search onSearch={this.searchForItem} />
         <ItemList items={this.state.itemList} onClick={this.searchForItem} />
       </div>
@@ -33,4 +33,4 @@ var App = React.createClass({
   }
 });
 
-module.exports = App;
+module.exports = ItemPage;

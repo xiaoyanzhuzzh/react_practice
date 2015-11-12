@@ -1,6 +1,6 @@
 var React = require('react');
 var Item = require('./Item');
-var LocationList = React.createClass({
+var ItemList = React.createClass({
   render(){
     var itemList = [];
     for(var i = 0; i < this.props.items.length; i++) {
@@ -33,5 +33,4 @@ var LocationList = React.createClass({
   }
 });
 
-module.exports = LocationList;
-
+module.exports = ItemList;

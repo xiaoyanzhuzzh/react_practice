@@ -1,7 +1,9 @@
 'use strict';
 var React = require('react');
+var ItemPage = require('../components/ItemPage.js');
+
 module.exports = React.createClass({
-    displayName: "ItemDetails",
+    displayName: "ItemPage",
     statics: {
         metaData() {
             return {
@@ -13,7 +15,7 @@ module.exports = React.createClass({
     render() {
         return (
             <div>
-                <h1>Items</h1>
+                <ItemPage />
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi dicta
                 dignissimos earum eos esse impedit ipsum iste laboriosam numquam odio perspiciatis porro, quas sequi tempore
                 vero vitae voluptates
