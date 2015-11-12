@@ -10,6 +10,7 @@ var ItemDetails = require('./handlers/ItemDetails');
 module.exports =
     <Route handler={App}>
         <Route name="home" handler={Home} />
-        <Route name="items" handler={Items} />
-        <Route name="itemDetails" path="/items/:id" handler={ItemDetails} />
+        <Route name="items" handler={Items}>
+          <Route name="/:itemId" handler={ItemDetails} />
+        </Route>
     </Route>;

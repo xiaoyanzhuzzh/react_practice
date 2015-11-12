@@ -1,6 +1,7 @@
 var React = require('react');
 var Router = require('react-router');
 var Link = Router.Link;
+var RouteHandler = Router.RouteHandler;
 
 module.exports = React.createClass({
     displayName: "App",
@@ -17,7 +18,8 @@ module.exports = React.createClass({
         return (
             <div>
                 <Link to="/home">Home</Link>
-                <Link to="/itemDetails">ItemDetails</Link>
+                <Link to="/item">Item</Link>
+                <RouteHandler />
             </div>
         )
     }
