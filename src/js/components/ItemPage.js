@@ -25,7 +25,6 @@ var ItemPage = React.createClass({
   render(){
     return (
       <div>
-        <h1>ItemList</h1>
         <Search onSearch={this.searchForItem} />
         <ItemList items={this.state.itemList} onClick={this.searchForItem} />
       </div>

@@ -12,8 +12,9 @@ var ItemList = React.createClass({
       return null;
     }
     return (
-      <div>
-        <table>
+      <div id="itemTable">
+        <table className="table">
+          <caption>商品列表</caption>
           <thead>
             <tr>
               <td>ID</td>
