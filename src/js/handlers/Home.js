@@ -18,8 +18,6 @@ module.exports = React.createClass({
                 dignissimos earum eos esse impedit ipsum iste laboriosam numquam odio perspiciatis porro, quas sequi tempore
                 vero vitae voluptates
             </div>
-
         );
     }
 });
-

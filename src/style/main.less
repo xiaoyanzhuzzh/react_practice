@@ -3,16 +3,28 @@ body{
   margin: auto auto;
 }
 #nav{
+  background-color: #BF7571;
   ul{
     display: inline-block;
-    padding: 0;
+    padding: 10px 30px;
     margin: 0;
     li{
       display: inline-block;
-      padding: 0 10px;
-      font-size: 1.5em;
+      padding: 0 20px;
+      margin: 0;
+      font-size: 1.2em;
+      &:first-child{
+        border: solid 0px #000000;
+        border-right: 1px;
+      }
       a{
+        color: #000000;
         text-decoration: none;
+        font-weight: bold;
+        font-family: monospace;
+        &:hover{
+          color: #F7E706;
+        }
       }
     }
   }

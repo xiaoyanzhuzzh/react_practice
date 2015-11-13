@@ -16,13 +16,18 @@ module.exports = React.createClass({
     },
     render() {
         return (
+          <div>
             <div id="nav">
               <ul>
-                <li><Link className="link" to="/home">Home</Link></li>
-                <li><Link className="link" to="/item">Item</Link></li>
+                <li><Link className="link" to="/">慧小猪的商店</Link></li>
+                <li><Link className="link" to="/home">主页</Link></li>
+                <li><Link className="link" to="/item">商品管理</Link></li>
               </ul>
-                <RouteHandler />
             </div>
+            <div>
+              <RouteHandler />
+            </div>
+          </div>
         )
     }
 });
