@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "online shop system using react",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -13,6 +10,8 @@
     "react-router": "^0.12.4"
   },
   "devDependencies": {
+    "babel-jest": "*",
+    "jest-cli": "*",
     "gulp": "^3.6.0",
     "del": "^1.1.1",
     "browser-sync": "^1.8.2",
@@ -22,5 +21,17 @@
     "gulp-load-plugins": "^0.8.0",
     "gulp-less": "^3.0.1",
     "gulp-jade": "^1.0.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/fbjs"
+    ]
   }
 }
