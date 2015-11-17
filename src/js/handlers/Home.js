@@ -14,9 +14,9 @@ module.exports = React.createClass({
         return (
             <div>
                 <h1>Home Page</h1>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi dicta
+                <div className="homeDes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi dicta
                 dignissimos earum eos esse impedit ipsum iste laboriosam numquam odio perspiciatis porro, quas sequi tempore
-                vero vitae voluptates
+                vero vitae voluptates</div>
             </div>
         );
     }
