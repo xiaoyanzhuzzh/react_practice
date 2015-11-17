@@ -1,9 +1,10 @@
 'use strict';
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
+var runSequence = require('run-sequence');
 var browserify = require('browserify');
-var del = require('del');
 var reactify = require('reactify');
+var del = require('del');
 var source = require('vinyl-source-stream');
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
@@ -11,12 +12,12 @@ var reload = browserSync.reload;
 var paths = {
     less: ['./src/style/**/*.less'],
     jade: ['./src/index.jade'],
-    mainJs: ['./src/js/client.js'],
-    js: ['./src/js/*/**.js']
+    js: ['./src/js/*/**.js'],
+    testJs: ['./__tests__/*/**.js']
 };
 
 gulp.task('clean', function(done) {
-    del(['build'], done);
+   del(['build'], done);
 });
 
 gulp.task('lessCompiler', function() {
@@ -31,15 +32,15 @@ gulp.task('jadeCompiler', function () {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('bundleJs', function(){
-    browserify(paths.mainJs)
+gulp.task('build', function(){
+    return browserify("./src/js/client.js")
         .transform(reactify)
         .bundle()
         .pipe(source('bundle.js'))
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('serve', ['bundleJs', 'lessCompiler', 'jadeCompiler'], function () {
+gulp.task('serve', ['build', 'lessCompiler', 'jadeCompiler'], function () {
     browserSync({
         notify: false,
         port: 9000,
@@ -49,9 +50,15 @@ gulp.task('serve', ['bundleJs', 'lessCompiler', 'jadeCompiler'], function () {
     });
 
     gulp.watch(paths.less, ['lessCompiler', reload]);
-    gulp.watch(paths.js, ['bundleJs', reload]);
-    gulp.watch(paths.mainJs, ['bundleJs', reload]);
+    gulp.watch(paths.js, ['build', reload]);
     gulp.watch(paths.jade, ['jadeCompiler', reload]);
 });
 
-gulp.task('default', ['serve']);
+gulp.task('jest', $.shell.task('npm test', {
+    ignoreErrors: false
+}));
+
+gulp.task('test', function () {
+  runSequence('jest');
+  gulp.watch([paths.js, paths.testJs], ['jest'])
+});
