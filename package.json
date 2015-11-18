@@ -9,9 +9,7 @@
     "react": "0.12.2",
     "react-router": "^0.12.4",
     "babel": "^5.8.23",
-    "babel-core": "^5.8.23"
-  },
-  "devDependencies": {
+    "babel-core": "^5.8.23",
     "babel-jest": "*",
     "jest-cli": "*",
     "gulp": "^3.6.0",
