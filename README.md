@@ -7,6 +7,7 @@ Install gulp:
 
 #### 启动服务
 
-  * 执行`gulp serve`
+##### 开发环境
+  * 执行`gulp build:Dev`
 
-  * 打开`http://localhost:9111/find-agents`
+  * 打开`http://localhost:9000`

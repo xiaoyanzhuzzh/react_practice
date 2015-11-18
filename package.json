@@ -9,10 +9,8 @@
     "react": "0.12.2",
     "react-router": "^0.12.4",
     "babel": "^5.8.23",
-    "babel-core": "^5.8.23"
-  },
-  "devDependencies": {
-    "babel-jest": "*",
+    "babel-core": "^5.8.23",
+    "babel-jest": "^5.3.0",
     "jest-cli": "*",
     "gulp": "^3.6.0",
     "del": "^1.1.1",
@@ -28,10 +26,12 @@
     "react-tools": "^0.13.0"
   },
   "scripts": {
-    "test": "BABEL_JEST_STAGE=0 jest"
+    "test": "jest"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": ["jsx", "js"],
+    "moduleFileExtensions": ["jsx", "js"],
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-router",

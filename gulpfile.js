@@ -32,7 +32,7 @@ gulp.task('jadeCompiler', function () {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('build', function(){
+gulp.task('bundle', function(){
     return browserify("./src/js/client.js")
         .transform(reactify)
         .bundle()
@@ -40,10 +40,20 @@ gulp.task('build', function(){
         .pipe(gulp.dest('build'));
 });
 
+gulp.task('build', ['bundle', 'lessCompiler', 'jadeCompiler'], function () {
+    browserSync({
+        notify: false,
+        port: process.env.PORT || 9000,
+        server: {
+            baseDir: 'build'
+        }
+    });
+});
+
 gulp.task('serve', ['build', 'lessCompiler', 'jadeCompiler'], function () {
     browserSync({
         notify: false,
-        port: 9000,
+        port: process.env.PORT || 9000,
         server: {
             baseDir: 'build'
         }
