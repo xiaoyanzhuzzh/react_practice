@@ -1,21 +1,18 @@
 'use strict';
-jest.dontMock('../CheckboxWithLabel');
-import React from 'react';
-import TestUtils from 'react/addons';
+jest.dontMock('../../../src/js/handlers/App');
+var React = require('react/addons');
+var TestUtils = React.addons.TestUtils;
+var App = require('../../../src/js/handlers/App');
 
-const App = require('../../src/handlers/App');
-
-describe('App Handler', () => {
-  it('changes the text after click', () => {
-    var app = TestUtils.renderIntoDocument(
-      <App />
-    );
-    var appNode = ReactDOM.findDOMNode(app);
-    expect(appNode.textContent).toEqual('Off');
-    TestUtils.Simulate.click(
-      TestUtils.findRenderedDOMComponentWithTag(app, 'a')
-    );
-    expect(appNode.textContent).toEqual('On');
-  });
-
+describe('App Handler', function() {
+    it('link to different page after click', function() {
+        var app = <App />;
+        console.log(app);
+        var appNode = React.findDOMNode(app);
+        expect(appNode.textContent).toEqual('Off');
+        TestUtils.Simulate.click(
+            TestUtils.findRenderedDOMComponentWithTag(app, 'a')
+        );
+        expect(appNode.textContent).toEqual('On');
+    })
 });
