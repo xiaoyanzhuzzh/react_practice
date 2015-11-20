@@ -50,7 +50,7 @@ gulp.task('build', ['bundle', 'lessCompiler', 'jadeCompiler'], function () {
     });
 });
 
-gulp.task('serve', ['build', 'lessCompiler', 'jadeCompiler'], function () {
+gulp.task('build:Dev', ['bundle', 'lessCompiler', 'jadeCompiler'], function () {
     browserSync({
         notify: false,
         port: process.env.PORT || 9000,
