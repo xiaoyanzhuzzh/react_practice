@@ -64,11 +64,7 @@ gulp.task('build:Dev', ['bundle', 'lessCompiler', 'jadeCompiler'], function () {
     gulp.watch(paths.jade, ['jadeCompiler', reload]);
 });
 
-gulp.task('jest', $.shell.task('npm test', {
+gulp.task('test', $.shell.task('npm test', {
     ignoreErrors: false
 }));
 
-gulp.task('test', function () {
-  runSequence('jest');
-  gulp.watch([paths.js, paths.testJs], ['jest'])
-});

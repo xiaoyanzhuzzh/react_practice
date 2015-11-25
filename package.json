@@ -6,8 +6,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "0.12.2",
-    "react-router": "^0.12.4",
+    "react": "^0.14.3",
+    "react-router": "^0.13.0",
+    "react-dom": "^0.14.3",
+    "react-addons-test-utils": "^0.14.3",
     "babel": "^5.8.23",
     "babel-core": "^5.8.23",
     "babel-jest": "*",
@@ -22,17 +24,21 @@
     "gulp-load-plugins": "^0.8.0",
     "gulp-less": "^3.0.1",
     "gulp-jade": "^1.0.0",
-    "gulp-shell": "^0.5.0",
-    "react-tools": "^0.13.0"
+    "gulp-shell": "^0.5.0"
   },
   "scripts": {
     "test": "BABEL_JEST_STAGE=0 jest"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": ["es6", "js", "jsx"],
+    "moduleFileExtensions": ["js", "json", "es6", "jsx"],
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react",
       "<rootDir>/node_modules/react-router",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/can-use-dom",
       "<rootDir>/node_modules/fbjs"
     ]
   }
