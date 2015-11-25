@@ -16,8 +16,7 @@ describe('Item Handler', () => {
         var item = TestUtils.renderIntoDocument(
             <Item item={currentItem} />
         );
-        console.log(item);
-
+        expect(TestUtils.scryRenderedDOMComponentsWithClass(item, Item)[0].props.item.id).toBe(1);
     });
 
 });
