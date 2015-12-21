@@ -8,5 +8,6 @@ deploy:
   provider: heroku
   api_key:
      secure: f9f77f2e-b88a-4f45-8c10-d9a8ccb4e930
+  skip_cleanup: true
   on: 
      branch: master
