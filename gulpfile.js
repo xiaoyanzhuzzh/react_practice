@@ -14,7 +14,8 @@ var paths = {
     jade: ['./src/index.jade'],
     js: ['./src/js/**/*.js'],
     testJs: ['./__tests__/**/*.js'],
-    vendor: ['./lib/**']
+    vendor: ['./lib/**'],
+    image: ['./src/image']
 };
 
 gulp.task('clean', function(done) {
@@ -31,6 +32,11 @@ gulp.task('jadeCompiler', function () {
     return gulp.src(paths.jade)
         .pipe($.jade({pretty: true}))
         .pipe(gulp.dest('build'));
+});
+
+gulp.task('copy:image', function() {
+    return gulp.src(paths.image)
+        .pipe(gulp.dest('build/image'));
 });
 
 gulp.task('copy:vendor', function() {

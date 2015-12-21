@@ -13,22 +13,7 @@ var ItemList = React.createClass({
     }
     return (
       <div id="itemTable">
-        <table className="table">
-          <caption>商品列表</caption>
-          <thead>
-            <tr>
-              <td>ID</td>
-              <td>分类</td>
-              <td>名称</td>
-              <td>价格</td>
-              <td>单位</td>
-              <td>个数</td>
-            </tr>
-          </thead>
-          <tbody>
-            {itemList}
-          </tbody>
-        </table>
+        {itemList}
       </div>
     )
   }
