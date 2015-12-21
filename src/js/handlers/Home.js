@@ -12,11 +12,12 @@ module.exports = React.createClass({
     },
     render() {
         return (
-            <div>
-                <h1>Home Page</h1>
-                <div className="homeDes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi dicta
+            <div className="homePage">
+                <div className="homeDes">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi dicta
                 dignissimos earum eos esse impedit ipsum iste laboriosam numquam odio perspiciatis porro, quas sequi tempore
-                vero vitae voluptates</div>
+                vero vitae voluptates
+                </div>
             </div>
         );
     }
