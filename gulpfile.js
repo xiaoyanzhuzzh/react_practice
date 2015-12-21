@@ -12,9 +12,9 @@ var reload = browserSync.reload;
 var paths = {
     less: ['./src/style/**/*.less'],
     jade: ['./src/index.jade'],
-    js: ['./src/js/*/**.js'],
-    testJs: ['./__tests__/*/**.js'],
-    vendor: ['./lib']
+    js: ['./src/js/**/*.js'],
+    testJs: ['./__tests__/**/*.js'],
+    vendor: ['./lib/**']
 };
 
 gulp.task('clean', function(done) {
