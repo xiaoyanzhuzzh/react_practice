@@ -15,7 +15,7 @@ var paths = {
     js: ['./src/js/**/*.js'],
     testJs: ['./__tests__/**/*.js'],
     vendor: ['./lib/**'],
-    image: ['./src/image']
+    image: ['./src/image/**']
 };
 
 gulp.task('clean', function(done) {
@@ -52,7 +52,7 @@ gulp.task('bundle', function(){
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('build', ['bundle', 'copy:vendor', 'lessCompiler', 'jadeCompiler'], function () {
+gulp.task('build', ['bundle', 'copy:vendor', 'copy:image', 'lessCompiler', 'jadeCompiler'], function () {
     browserSync({
         notify: false,
         port: process.env.PORT || 9000,
@@ -62,7 +62,7 @@ gulp.task('build', ['bundle', 'copy:vendor', 'lessCompiler', 'jadeCompiler'], fu
     });
 });
 
-gulp.task('build:Dev', ['bundle', 'copy:vendor', 'lessCompiler', 'jadeCompiler'], function () {
+gulp.task('build:Dev', ['bundle', 'copy:vendor', 'copy:image', 'lessCompiler', 'jadeCompiler'], function () {
     browserSync({
         notify: false,
         port: process.env.PORT || 9000,
