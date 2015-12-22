@@ -12,7 +12,7 @@ describe('ItemList Component', () => {
     var items, itemList;
     beforeEach(() => {
         items = [
-            {id: 1, name: '菠萝', price: 12.0, unit: '个', category: '水果', number: 4}
+            {id: 1, name: '菠萝', price: 12.0, unit: '个', category: '水果', number: 4, image: '/image/xiaozhu1.png'}
         ];
 
         itemList = TestUtils.renderIntoDocument(

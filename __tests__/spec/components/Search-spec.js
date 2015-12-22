@@ -24,7 +24,10 @@ describe('Search Component', () => {
         TestUtils.Simulate.change(
             TestUtils.findRenderedDOMComponentWithTag(search, 'input')
         );
-        //expect(searchForItem).toHaveBeenCalled();
+        TestUtils.Simulate.submit(
+            TestUtils.findRenderedDOMComponentWithTag(search, 'form')
+        );
+        //expect(TestUtils.scryRenderedComponentsWithType(search, Search)[0].props.onSearch).toHaveBeenCalled();
     });
 
 });
